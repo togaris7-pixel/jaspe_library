@@ -45,6 +45,12 @@
                             @method('patch')
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="surname">{{ __('auth.name') }} </label>
+                                    <input type="text" class="form-control" id="surname"
+                                        value="{{ old('surname', $user->surname) }}" required autofocus autocomplete="surname">
+                                    <span class="mt-2" :messages="$errors - > get('surname')"></span>
+                                </div>
+                                <div class="form-group">
                                     <label for="name">{{ __('auth.name') }} </label>
                                     <input type="text" class="form-control" id="name"
                                         value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
